@@ -92,6 +92,7 @@ conn.on('message-new', async(m) =>
    let imageMessage = m.message.imageMessage;
    console.log(`[ ${moment().format("HH:mm:ss")} ] => Nomor: [ ${id.split("@s.whatsapp.net")[0]} ] => ${text}`);
 
+
 //fitur
 
   //Seberapa bucin
@@ -437,6 +438,18 @@ axios.get(`https://st4rz.herokuapp.com/api/ytv?url=${teks}`).then((res) => {
 })
 }
 
+if (text.includes('.Ytvideo')){
+conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .ytmp4 http://youtube..._',MessageType.text, {quoted: m});
+}
+if (text.includes('.ytvideo')){
+const teks = text.replace(/.ytvideo /, "")
+axios.get(`https://api-shizuka.herokuapp.com/ytmp4?apikey=itsmeiky633&url=${teks}`).then((res) => {
+	conn.sendMessage(id, '[ WAIT ] Mendownload...⏳ silahkan tunggu', MessageType.text, {quoted: m})
+    let hasil = `Klik link dan download hasilnya️\n*Judul* : ${res.data.title}\n*Ukuran* : ${res.data.filesize}\n*Format* : MP4\n*Link* : ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text, {quoted: m});
+})
+}
+
 if (text.includes('.Ytmp3')){
 conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .ytmp3 http://www.youtube..._',MessageType.text, {quoted: m});
 }
@@ -445,6 +458,78 @@ const teks = text.replace(/.ytmp3 /, "")
 axios.get(`https://st4rz.herokuapp.com/api/yta?url=${teks}`).then((res) => {
     conn.sendMessage(id, '[ WAIT ] Mendownload...⏳ silahkan tunggu', MessageType.text, {quoted: m})
     let hasil = `Klik link dan download hasilnya\n*Judul* : ${res.data.title}\n*Ukuran video* : ${res.data.filesize}\n*Format* : MP3\n*Link* : ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text, {quoted: m});
+})
+}
+
+if (text.includes('.Ytmusik')){
+conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .ytmp3 http://www.youtube..._',MessageType.text, {quoted: m});
+}
+if (text.includes('.ytmusik')){
+const teks = text.replace(/.ytmusik /, "")
+axios.get(`https://api-shizuka.herokuapp.com/ytmp3?apikey=itsmeiky633&url=${teks}`).then((res) => {
+    conn.sendMessage(id, '[ WAIT ] Mendownload...⏳ silahkan tunggu', MessageType.text, {quoted: m})
+    let hasil = `Klik link dan download hasilnya\n*Judul* : ${res.data.title}\n*Ukuran video* : ${res.data.filesize}\n*Format* : MP3\n*Link* : ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text, {quoted: m});
+})
+}
+
+if (text.includes('.Ytlagu')){
+conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .ytmp3 http://www.youtube..._',MessageType.text, {quoted: m});
+}
+if (text.includes('.ytlagu')){
+const teks = text.replace(/.ytlagu /, "")
+axios.get(`https://api.shizukaa.xyz/api/ytmp3?apikey=itsmeiky633&url=${teks}`).then((res) => {
+    conn.sendMessage(id, '[ WAIT ] Mendownload...⏳ silahkan tunggu', MessageType.text, {quoted: m})
+    let hasil = `Klik link dan download hasilnya\n*Judul* : ${res.data.title}\n*Ukuran video* : ${res.data.filesize}\n*Format* : MP3\n*Link* : ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text, {quoted: m});
+})
+}
+
+if (text.includes('.Ytaudio')){
+conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .ytmp3 http://www.youtube..._',MessageType.text, {quoted: m});
+}
+if (text.includes('.ytaudio')){
+const teks = text.replace(/.ytaudio /, "")
+axios.get(`https://videfikri.com/api/ytmp3/?url=${teks}`).then((res) => {
+    conn.sendMessage(id, '[ WAIT ] Mendownload...⏳ silahkan tunggu', MessageType.text, {quoted: m})
+    let hasil = `Klik link dan download hasilnya\n*Judul* : ${res.data.title}\n*Ukuran video* : ${res.data.filesize}\n*Format* : MP3\n*Link* : ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text, {quoted: m});
+})
+}
+
+if (text.includes('.Asupan')){
+conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .ytmp3 http://www.youtube..._',MessageType.text, {quoted: m});
+}
+if (text.includes('.asupan')){
+const teks = text.replace(/.asupan /, "")
+axios.get(`https://api-shizuka.herokuapp.com/asupan?apikey=itsmeiky633&url=${teks}`).then((res) => {
+    conn.sendMessage(id, '[ WAIT ] Mendownload...⏳ silahkan tunggu', MessageType.text, {quoted: m})
+    let hasil = `Klik link dan download hasilnya\n*Judul* : ${res.data.title}\n*Ukuran video* : ${res.data.filesize}\n*Format* : MP3\n*Link* : ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text, {quoted: m});
+})
+}
+
+if (text.includes('.Asupan2')){
+conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .ytmp3 http://www.youtube..._',MessageType.text, {quoted: m});
+}
+if (text.includes('.asupan2')){
+const teks = text.replace(/.asupan2 /, "")
+axios.get(`https://api.shizukaa.xyz/api/asupan?apikey=itsmeiky633`).then((res) => {
+    conn.sendMessage(id, '[ WAIT ] Mendownload...⏳ silahkan tunggu', MessageType.text, {quoted: m})
+    let hasil = `Klik link dan download hasilnya\n*Judul* : ${res.data.title}\n*Ukuran video* : ${res.data.filesize}\n*Format* : MP3\n*Link* : ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text, {quoted: m});
+})
+}
+
+if (text.includes('.Randomimage')){
+conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .ytmp3 http://www.youtube..._',MessageType.text, {quoted: m});
+}
+if (text.includes('.randomimage')){
+const teks = text.replace(/.randomimage /, "")
+axios.get(`https://api-shizuka.herokuapp.com/randomimage?apikey=itsmeiky633`).then((res) => {
+    conn.sendMessage(id, '[ WAIT ] Mendownload...⏳ silahkan tunggu', MessageType.text, {quoted: m})
+    let hasil = `Dikarenakan kamu belum donasi hari ini, Klik link dan download hasilnya sendiri\n*Link* : ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text, {quoted: m});
 })
 }
@@ -709,6 +794,18 @@ conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .liri
 if (text.includes(".lirik")){
 	const teks = text.split(".lirik")[1]
 	axios.get(`http://scrap.terhambar.com/lirik?word=${teks}`).then ((res) => {
+	     conn.sendMessage(id, '[ WAIT ] Searching lirik⏳ silakan tunggu', MessageType.text, { quoted: m } )
+	 	let hasil = `lirik ${teks} \n\n\n ${res.data.result.lirik}`
+	conn.sendMessage(id, hasil, MessageType.text, { quoted: m } )
+	})
+}
+//LIRIK 2
+if (text.includes('.Lirik2')){
+conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .lirik anji - dia_',MessageType.text, { quoted: m } );
+}
+if (text.includes(".lirik2")){
+	const teks = text.split(".lirik2")[1]
+	axios.get(`https://api.shizukaa.xyz/api/lirik?apikey=itsmeiky633&q=${teks}`).then ((res) => {
 	     conn.sendMessage(id, '[ WAIT ] Searching lirik⏳ silakan tunggu', MessageType.text, { quoted: m } )
 	 	let hasil = `lirik ${teks} \n\n\n ${res.data.result.lirik}`
 	conn.sendMessage(id, hasil, MessageType.text, { quoted: m } )
@@ -1767,6 +1864,17 @@ axios.get(`https://arugaz.herokuapp.com/api/artinama?nama=${teks}`).then((res) =
     conn.sendMessage(id, hasil ,MessageType.text, { quoted: m } );
 })
 }
+//Primbon arti nama
+if (text.includes('.Arti2')){
+conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .arti udin_',MessageType.text, { quoted: m } );
+}
+if (text.includes(".arti2")){
+const teks = text.replace(/.arti2 /, "")
+axios.get(`https://api.shizukaa.xyz/api/artinama?apikey=itsmeiky633&q=Itsmeiky`).then((res) => {
+    let hasil = `*Arti dari namanu adalah*\n\n    *${teks}* ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text, { quoted: m } );
+})
+}
 //simsimi
 if (text.includes('.Bot')){
 conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil\n_contoh : .bot apa kabar_',MessageType.text, { quoted: m } );
@@ -1813,6 +1921,14 @@ _Ex artinya contoh_͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏�
 ├≽️ *.Closegc*
 ├≽️ *!Notif (teks)*
 ╰────────────⊱  
+
+▣══─「 New Fitur 」─══▣
+├⊱ *.ytmusik*
+├⊱ *.ytvideo*
+├⊱ *.asw*
+├⊱ *.lirik2*
+├⊱ *.arti2*
+╰────────────⊱
 
 ╭════•›「 Game 」 
 ├≽️ *.Tebakgambar*
@@ -2271,6 +2387,7 @@ Zulu = zu`, MessageType.text, {quoted: m});
 //Mod by @sarjananet
 //       @NEWSTORYBOT
 //       @ownerSTORYBOT
+
 
 
 })
